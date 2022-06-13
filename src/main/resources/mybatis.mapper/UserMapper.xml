@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mabtis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="seowoo.jang.datamarket.repository.UserRepository">
+    <select resultType="UserDto" id="findById">
+        SELECT * FROM test WHERE id = #{id}
+    </select>
+
+    <select resultType="UserDto" id="findAll">
+        SELECT * FROM test
+    </select>
+
+    <insert id="insertUser">
+        INSERT INTO test (name) VALUES (#{user.name});
+    </insert>
+</mapper>
