@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="Utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mabtis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="seowoo.jang.datamarket.repository.BoardRepository">
+    <select resultType="BoardDto" id="findContentById">
+        SELECT * FROM board WHERE id = #{id}
+    </select>
+
+    <select resultType="BoardDto" id="findContentAll">
+        SELECT * FROM board
+    </select>
+
+    <insert id="insertNewContent">
+        INSERT INTO board (user_id, title, content, datetime)
+        VALUES (1, #{board.title}, #{board.content}, #{board.datetime});
+    </insert>
+</mapper>
